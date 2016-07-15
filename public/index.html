@@ -15,10 +15,11 @@
         $.ajax({
             url: "/users",
             type: "POST",
-            data: {
+            data: JSON.stringify({
                 "username": "joe",
                 "password": "dog"
-            }
+            }),
+            contentType:'application/json'
         })
     </script>
 </body>

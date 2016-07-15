@@ -8,8 +8,9 @@ var app = express();
 var jsonParser = bodyParser.json();
 
 var bcrypt = require('bcrypt');
-
-app.post('/users', jsonParser, function(req, res) {
+app.use(express.static('public'))
+app.post('/users',jsonParser, function(req, res) {
+console.log(req)
     if (!req.body) {
         return res.status(400).json({
             message: "No request body"
